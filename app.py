@@ -141,7 +141,6 @@ def search():
 # borrar partida
 @app.route('/delete')
 def delete():
-  print(request.args.get('username'))
   if(request.args.get('username') == None):
     return render_template('signin.html')
   cur = mysql.connection.cursor()
@@ -226,7 +225,6 @@ def game():
   cur.close()
 
   # checkear ganador
-  print('""""""""""""""""""""""""""""""""""""""""""""""""""""""""')
   w = checkWinner(tablero)
   if(w):
     if data[0][2] == request.args.get('username'):
