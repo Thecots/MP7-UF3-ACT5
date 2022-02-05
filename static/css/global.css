@@ -1,0 +1,455 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat',sans-serif;
+}
+
+:root{
+  --c-error: #f12020;
+  --c-default-blue: #5a72fd;
+  --c-secundari-blue: #3a57fa;
+  --c-white:#fff;
+  --c-border: #dadce0;
+}
+
+
+/* SCROLL BAR */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #e6e6e6; 
+}
+  ::-webkit-scrollbar-thumb {
+  background: rgb(44, 44, 44); 
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(59, 59, 59); 
+}
+
+main{
+  margin: 50px auto;
+  max-width: 100%;
+  width: 1500px;
+  padding: 0 10px;
+}
+  main header{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    border-bottom: 2px solid black;
+    align-items: center;
+  }
+    main header h1{
+      font-weight: 400;
+    }
+    main header h1.searchH1::after{
+      content: "";
+      border: 4px solid rgb(162, 185, 253);
+      border-bottom: 4px solid royalblue;
+      margin-top: 8px;
+      margin-left: 8px;
+      width: 18px;
+      height: 18px;
+      position: absolute;
+      border-radius: 50%;
+      animation: searching 0.5s linear infinite;
+    }
+    @keyframes searching{
+      0%{transform: rotate(0deg);}
+      100%{transform: rotate(360deg);}
+    }
+    main header .buttons{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+      main header .buttons a{
+        text-decoration: none;
+        padding: 8px 20px;
+        color: #000;
+        border-radius: 3px;
+        font-weight: 500;
+        transition: transform 0.3s;
+        cursor: pointer;
+      }
+        main header .buttons a:nth-child(1){
+          background-color: lightgreen;
+        }
+        main header .buttons a:nth-child(2){
+          background-color: lightskyblue;
+        }
+        main header .buttons a:nth-child(3){
+          background-color: lightcoral;
+        }
+        main header .buttons a:active{
+          transform: scale(0.95);
+        }
+/* game.search */
+section.games{
+  margin-top: 25px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+  section.games h1{
+    margin-top: 100px;
+    text-align: center; 
+    font-size: 40px;
+    font-weight: 500;
+  }
+  section.games div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid rgb(218, 218, 218);
+    border-radius: 4px;
+    height: 60px;
+  }
+    section.games div span {
+      display: flex;
+      gap: 20px;
+    }
+    section.games div span h3{
+      font-weight: 500;
+    }
+    section.games div span h3:nth-child(1){
+      font-weight: 600;
+      font-size: 20px;
+    }
+    section.games div a {
+      outline: none;
+      font-size: 14px;
+      padding: 8px 30px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 500;
+      color: white;
+      text-decoration: none;
+      color: #000;
+      background-color: lightgreen;
+      text-transform: capitalize;
+      letter-spacing: 1px;
+      font-weight: 700;
+      font-size: 16px;
+      border: 2px solid rgba(86, 144, 86, 0.116);
+      transition: transform;
+    }
+      section.games div a:active{
+        transform: scale(0.95);
+      }
+      body{
+        background-color: white;
+      }
+      
+      .buscarPartida{
+        margin: 40px auto;
+        max-width: 100%;
+        width: 1500px;
+        padding: 10px;
+        height: fit-content;
+      }
+      
+      .buscarPartida header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 4px;
+        border-bottom: 2px solid black;
+      }
+      
+      .buscarPartida header span{
+        display: flex;
+        gap: 25px;
+      }
+      
+      .buscarPartida header h1,
+      .buscarPartida header h2{
+        font-size: 30px;
+        font-weight: 400;
+      }
+      .buscarPartida header h1::after{
+        content: ".";
+        position: absolute;
+        animation: buscando 2.5s infinite linear;
+        margin-left: 3px;
+      }
+      
+      .noAnimate{
+        animation:  linear;
+      }
+      
+      @keyframes buscando{
+        0%{
+          content: ".";
+        }50%{
+          content: ". .";
+        }100%{
+          content: ". . .";
+        }
+      }
+      
+      .buscarPartida header input[type="submit"],
+      .exitxd
+      {
+        border: none;
+        outline: none;
+        font-size: 14px;
+        padding: 6px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 500;
+        color: white;
+        background-color: royalblue;
+        transition: transform;
+      }
+      .buscarPartida header input[type="submit"]:hover{
+        background-color: rgb(58, 92, 195);
+      }
+      .buscarPartida header input[type="submit"]:active{
+        transform: scale(0.95);
+        background-color: rgb(91, 131, 251)
+      }
+      .exitxd{
+        background-color: red !important;
+        text-decoration: none;
+        font-size: 15px;
+      }
+      .exitxd:active{
+        transform: scale(0.95);
+      
+      }
+      
+      .buscarPartida header span form:first-child input[type="submit"] {
+        background-color: lightgreen;
+        color: black;
+      }
+      
+      .buscarPartida section{
+        margin-top: 25px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .buscarPartida section > h1{
+        margin-top: 100px;
+        text-align: center; 
+        font-size: 40px;
+        font-weight: 500;
+      }
+      
+      .buscarPartida section div{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        border: 1px solid rgb(218, 218, 218);
+        border-radius: 4px;
+        height: 60px;
+      }
+      
+      .buscarPartida section div span {
+        display: flex;
+        gap: 20px;
+      }
+      
+      .buscarPartida section div span h3{
+        font-weight: 500;
+      }
+      
+      .buscarPartida section div span h3:nth-child(1){
+        font-weight: 600;
+        font-size: 20px;
+      }
+      
+      .buscarPartida section div a {
+        outline: none;
+        font-size: 14px;
+        padding: 8px 30px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 500;
+        color: white;
+        text-decoration: none;
+        color: #000;
+        background-color: lightgreen;
+        text-transform: capitalize;
+        letter-spacing: 1px;
+        font-weight: 700;
+        font-size: 16px;
+        border: 2px solid rgba(86, 144, 86, 0.116);
+        transition: transform;
+      }
+      
+      .buscarPartida section div a:active{
+        transform: scale(0.95);
+      }
+      
+      
+      .buscarPartida section a {
+       right: 0;
+      }
+      
+      .tablero{
+        margin-top: 25px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+      
+      .board{
+        background-color: royalblue;
+        width: fit-content;
+        padding: 10px;
+        display: grid;
+        border-radius: 10px;
+        grid-template-columns: repeat(7, 80px);
+        grid-template-rows: repeat(6, 80px);
+      
+      }
+      
+      .board span{
+        padding: 15px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      
+      }
+      
+      .board span::before{
+        content: "";
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background-color: white;
+        position: absolute;
+      }
+      
+      .board .circle1::before{
+        background-color: yellow;
+      }
+      
+      .board .circle2::before{
+        background-color: red;
+      }
+      
+      
+      .tablero .btn{
+        background-color: royalblue;
+        width: fit-content;
+        padding: 10px;
+        display: grid;
+        border-radius: 10px;
+        grid-template-columns: repeat(7, 80px);
+      }
+      
+      .tablero .btn a{
+        margin: 5px;
+        text-decoration: none;
+        height: 80px;
+        background-color: rgb(211, 211, 211);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: black;
+        font-weight: bolder;
+        border-radius: 5px;
+        cursor: not-allowed;
+        font-size: 25px;
+      }
+      
+      
+      .tablero .btn.pointer a{
+        cursor: pointer;
+        background-color: white;
+      }
+      
+      .finishgame {
+        width: 875px;
+        padding: 5px;
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-around;
+      }
+      
+      .finishgame a{
+        outline: none;
+        font-size: 14px;
+        padding: 8px 30px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 500;
+        color: white;
+        text-decoration: none;
+        color: #000;
+        text-transform: capitalize;
+        letter-spacing: 1px;
+        font-weight: 700;
+        font-size: 16px;
+        border: 2px solid rgba(86, 144, 86, 0.116);
+        transition: transform;
+      }
+      
+      .finishgame a:first-child{
+        background-color: red;
+      
+      }
+      
+      .finishgame a:active{
+        transform: scale(0.95);
+      }
+      
+      
+      .dissable{
+        pointer-events: none !important;
+        background-color: rgb(211, 211, 211) !important;
+      }
+
+
+      .adissabledexit{
+        background-color: rgb(200, 56, 56);
+        border-radius: 3px;
+        display: block !important;
+        padding: 5px 15px;
+        text-align: center;
+        color: white;
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+.sessionc{
+  max-width: 100%;
+  width: 1500px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.sessionc p{
+  font-size: 17px;
+}
+
+.sessionc a{
+  background-color: crimson;
+  padding: 3px 10px;
+  border-radius: 4px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
